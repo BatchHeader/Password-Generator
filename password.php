@@ -4,11 +4,11 @@ class password {
 
     private $lowercase = "abcdefghijklmnopqrstuvwxyz";
     private $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private $number = "123456789";
-    private $symbole = '~!@#$€%&*()_-+={}[]\|:;<>,.?/\'^';
+    private $number = "1234567890";
+    private $symbol = '~!@#%&*()_-+={}[]\|:;<>,.?/\'^';
     private $msgError = false;
     private $msgSuccess = false;
-    private $option;
+    private $option; 
 
     public function __construct() {
         
@@ -18,7 +18,7 @@ class password {
         $this->option["lowercase"] = $option["lowercase"];
         $this->option["uppercase"] = $option["uppercase"];
         $this->option["number"] = $option["number"];
-        $this->option["symbole"] = $option["symbole"];
+        $this->option["symbol"] = $option["symbol"];
         $this->option["size"] =  $option["size"];
     }
 
@@ -26,7 +26,7 @@ class password {
 
         $char = '';
         
-        if ($this->option["lowercase"] == false && $this->option["uppercase"] == false && $this->option["number"] == false && $this->option["symbole"] == false) {
+        if ($this->option["lowercase"] == false && $this->option["uppercase"] == false && $this->option["number"] == false && $this->option["symbol"] == false) {
             $this->msgError = "You must  choose at least 1 filter";
         }
 
@@ -36,8 +36,8 @@ class password {
             $char .= $this->uppercase;
         if ($this->option["number"])
             $char .= $this->number;
-        if ($this->option["symbole"])
-            $char .= $this->symbole;
+        if ($this->option["symbol"])
+            $char .= $this->symbol;
         $result = substr(str_shuffle($char), 0, $this->option["size"]);
         return $result;
     }
