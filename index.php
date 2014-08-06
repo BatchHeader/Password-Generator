@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Afxsoft - Password Generator</title>
+        <title>Password Generator</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="shortcut icon" href="favicon.ico" />
@@ -24,8 +24,8 @@
                 <?php include 'password.php'; ?>
             </section>
             <section id="content" class="container">
-                <img src="img/logo.png" class="img-responsive logo" alt="Afdal">
-                <h1>Afxsoft - Password Generator</h1>
+                <img src="https://www.batchheader.co.uk/images/batchheader_logo.png" class="img-responsive logo" alt="BatchHeader Logo">
+                <h1>Password Generator</h1>
                 <div class="row">
                     <?php if (isset($_POST["passgen"])): ?>
                         <?php
@@ -35,7 +35,7 @@
                                 "lowercase" => (!empty($_POST["lowercase"])) ? true : false,
                                 "uppercase" => (!empty($_POST["uppercase"])) ? true : false,
                                 "number" => (!empty($_POST["numbers"])) ? true : false,
-                                "symbole" => (!empty($_POST["specialchars"])) ? true : false,
+                                "symbol" => (!empty($_POST["specialchars"])) ? true : false,
                             );
                             $password = new password();
                             $password->setOption($option);
@@ -49,7 +49,7 @@
                                 <?php } ?>
                             </ul>
                         <?php else: ?>
-                            <p class="error">Le nombre de caractère doit être un nombre entier.</p>
+                            <p class="error">The number of characters must be an integer.</p>
                         <?php endif; ?>
                     <?php else: ?>
 
@@ -79,7 +79,7 @@
                                     <label for="idHash">Hash</label>
                                     <select id="idHash" name="hash">
                                         <?php
-                                        // On récupère une liste des algorithmes de hachage enregistrés.
+                                        // Get a list of registered hashing algorithms.
                                         $hashes = hash_algos();
                                         ?>
                                         <?php foreach ($hashes as $hash): ?>
@@ -97,7 +97,7 @@
             </section>
             <footer id="footer" >
                 <div class="container">
-                    <p>Site 2014 - Afxsoft</p>
+                    <p>Site 2014 - BatchHeader Ltd</p>
                 </div>
             </footer>
         </section>
