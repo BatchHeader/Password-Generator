@@ -20,7 +20,7 @@
                     <nav class="navbar" role="navigation">
 
                         <div class="container">
-		  <div class="col-sm-8 col-sm-offset-2">
+		  <div class="col-sm-6 col-sm-offset-3">
                 <h1>Password Generator</h1>
 		  </div>
                         </div>
