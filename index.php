@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +17,12 @@
         <section id="wrapper">            
             <header id="header">
                 <div class="top">
-                    <nav class="navbar navbar-inverse" role="navigation">
+                    <nav class="navbar" role="navigation">
 
                         <div class="container">
-
+		  <div class="col-sm-8 col-sm-offset-2">
+                <h1>BatchHeader Password Generator</h1>
+		  </div>
                         </div>
                     </nav>
                 </div>
@@ -73,7 +76,6 @@ class password {
 ?>
 	    </section>
             <section id="content" class="container">
-                <h1>BatcHeader Password Generator</h1>
                 <div class="row">
 		  <div class="col-sm-6 col-sm-offset-3">
                     <?php if (isset($_POST["passgen"])): ?>
@@ -89,43 +91,49 @@ class password {
                             $password = new password();
                             $password->setOption($option);
                             ?>
+			    <div class="well bg-success">
                             <ul>
-                                <li>Password: <?php echo $password->getMix(); ?>
+                                <li>Password: <h3><?php echo $password->getMix(); ?></h3>
 
                                 </li>
                                 <?php if (isset($_POST["hash_check"])) { ?>
-                                    <li>Hash (<?php print $_POST["hash"]; ?>) : <?php print hash($_POST["hash"], $password->getMix()); ?></li>
+                                    <li>Hash (<?php print $_POST["hash"]; ?>) : <h3><?php print hash($_POST["hash"], $password->getMix()); ?></h3></li>
                                 <?php } ?>
                             </ul>
+			    </div>
+			    <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="btn" class="btn btn-primary btn-lg">Generate Another</a>
                         <?php else: ?>
                             <p class="error">The number of characters must be an integer.</p>
+			    <a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" role="btn" class="btn btn-primary btn-lg">Generate Another</a>
                         <?php endif; ?>
                     <?php else: ?>
 
-                        <form class="form-horizontal" action="index.php" method="post">
+                        <form class="form-horizontal" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <fieldset>
                                 <legend>Choose filters :</legend>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="idLowercase" name="lowercase" checked />Lowercase
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="uppercase" name="uppercase" checked />Uppercase
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="idNumbers" name="numbers" checked />Number
-                                </label>
-                                <label class="checkbox">
-                                    <input type="checkbox" id="idSpecialchars" name="specialchars" />Symbole
-                                </label>
-                                <div class="control-group">
-                                    <label class="control-label" for="idLength">Number of character</label>
-                                    <div class="controls">
+				<div class="form-group">
+                                	<label class="checkbox col-xs-4">Lowercase</label>
+                                	    <input type="checkbox" id="idLowercase" name="lowercase" checked />
+				</div>
+				<div class="form-group">
+	                                <label class="checkbox col-xs-4">Uppercase</label>
+	                                    <input type="checkbox" id="uppercase" name="uppercase" checked />
+				</div>
+				<div class="form-group">
+	                                <label class="checkbox col-xs-4">Number</label>
+        	                            <input type="checkbox" id="idNumbers" name="numbers" checked />
+				</div>
+				<div class="form-group">
+	                                <label class="checkbox col-xs-4">Symbol</label>
+        	                            <input type="checkbox" id="idSpecialchars" name="specialchars" />
+        	                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-4" for="idLength">Number of characters</label>
                                         <input type="text" id="idLength" name="length" value="15" />
-                                    </div>
                                 </div>
-                                <p>
+                                <div class="form-group">
+                                    <label class="checkbox col-xs-4" for="idHash">Hash</label>
                                     <input type="checkbox" id="idSpecialchars" name="hash_check" />
-                                    <label for="idHash">Hash</label>
                                     <select id="idHash" name="hash">
                                         <?php
                                         // Get a list of registered hashing algorithms.
@@ -135,8 +143,8 @@ class password {
                                             <option value="<?php print $hash; ?>"><?php print $hash; ?></option>
                                         <?php endforeach; ?>
                                     </select>
-                                </p>
-                                <button type="submit" class="btn" name="passgen">Submit</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg" name="passgen">Submit</button>
                             </fieldset>
                         </form>
 
@@ -145,8 +153,13 @@ class password {
                 </div>
             </section>
             <footer id="footer" >
-                <div class="container">
-                    <p>Site 2014 -<a href="https://www.batchheader.co.uk"> BatchHeader Ltd</a></p>
+                <div class="container ">
+		  <div class="col-sm-6 col-sm-offset-3">
+<br/><br/>
+		    <p>This is free software, and is released under the terms of the <abbr title="GNU General Public License">GPL</abbr> version 3 or (at your option) any later version. See <a href="license.txt">license.txt</a>.</p>
+		    <p>Available on Github<a href="https://github.com/BatchHeader/Password-Generator" role="btn" class="btn" target="_blank">Fork</a> <a href="https://github.com/BatchHeader/Password-Generator/archive/master.zip" role="btn" class="btn" target="_blank">Download</a></p>
+                    <p>Site <?php echo date("Y"); ?> - <a href="https://www.batchheader.co.uk"> BatchHeader Ltd</a></p>
+		  </div>
                 </div>
             </footer>
         </section>
