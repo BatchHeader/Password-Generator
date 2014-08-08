@@ -1,9 +1,7 @@
 PHP Password Generator
 ======================
 
-*Simple PHP password generator*
- 
-This is a single file password generator. It uses the Bootstrap 3.2.0 CDN for responsive styling.
+This is a simple single php file password generator. It uses the Bootstrap 3.2.0 CDN for responsive styling.
 
 How to
 -------
