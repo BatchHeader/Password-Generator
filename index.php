@@ -73,9 +73,9 @@ class password {
 ?>
 	    </section>
             <section id="content" class="container">
-                <img src="https://www.batchheader.co.uk/images/batchheader_logo.png" class="img-responsive logo" alt="BatchHeader Logo">
-                <h1>Password Generator</h1>
+                <h1>BatcHeader Password Generator</h1>
                 <div class="row">
+		  <div class="col-sm-6 col-sm-offset-3">
                     <?php if (isset($_POST["passgen"])): ?>
                         <?php
                         if (is_numeric($_POST["length"])):
@@ -120,7 +120,7 @@ class password {
                                 <div class="control-group">
                                     <label class="control-label" for="idLength">Number of character</label>
                                     <div class="controls">
-                                        <input type="text" id="idLength" name="length" value="10" />
+                                        <input type="text" id="idLength" name="length" value="15" />
                                     </div>
                                 </div>
                                 <p>
@@ -141,16 +141,14 @@ class password {
                         </form>
 
                     <?php endif; ?>
-
+		  </div>
                 </div>
             </section>
             <footer id="footer" >
                 <div class="container">
-                    <p>Site 2014 - BatchHeader Ltd</p>
+                    <p>Site 2014 -<a href="https://www.batchheader.co.uk"> BatchHeader Ltd</a></p>
                 </div>
             </footer>
         </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
