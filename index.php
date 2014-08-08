@@ -21,7 +21,8 @@
 
                         <div class="container">
 		  <div class="col-sm-8 col-sm-offset-2">
-                <h1>BatchHeader Password Generator</h1>
+                <h1>A Password Generator<br>
+		by <a href="https://www.batchheader.co.uk" target="_blank">BatchHeader</a></h1>
 		  </div>
                         </div>
                     </nav>
