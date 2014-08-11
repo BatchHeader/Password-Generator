@@ -113,36 +113,46 @@ class password {
                                 <legend>Choose filters :</legend>
                                 <div class="form-group">
                                     <label class="col-xs-4" for="idLength">Password Length</label>
-					<div class="col-xs-4">
+					<div class="col-xs-8">
 					<select autofocus class="form-control" id="idLength" name="length" value="15">
-					  <option>10</option>
-					  <option selected>15</option>
-					  <option>20</option>
-					  <option>25</option>
-					  <option>30</option>
+					  <option value="10">Ten</option>
+					  <option value="15" selected>Fifteen</option>
+					  <option value="20">Twenty</option>
+					  <option value="25">Twenty Five</option>
+					  <option value="30">Thirty</option>
 					</select>
 					</div>
                                 </div>
 				<div class="form-group">
                                 	<label class="checkbox col-xs-4">Lowercase</label>
+					<div class="col-xs-8">
                                 	    <input type="checkbox" id="idLowercase" name="lowercase" checked />
+					</div>
 				</div>
 				<div class="form-group">
 	                                <label class="checkbox col-xs-4">Uppercase</label>
+					<div class="col-xs-8">
 	                                    <input type="checkbox" id="uppercase" name="uppercase" checked />
+					</div>
 				</div>
 				<div class="form-group">
 	                                <label class="checkbox col-xs-4">Number</label>
+					<div class="col-xs-8">
         	                            <input type="checkbox" id="idNumbers" name="numbers" checked />
+					</div>
 				</div>
 				<div class="form-group">
 	                                <label class="checkbox col-xs-4">Symbol</label>
+					<div class="col-xs-8">
         	                            <input type="checkbox" id="idSpecialchars" name="specialchars" />
+					</div>
         	                </div>
                                 <div class="form-group">
                                     <label class="checkbox col-xs-4" for="idHash">Hash</label>
+					<div class="col-xs-2">
                                     <input type="checkbox" id="idSpecialchars" name="hash_check" />
-					<div class="col-xs-4">
+					</div>
+					<div class="col-xs-6">
                                     <select class="form-control" id="idHash" name="hash">
                                         <?php
                                         // Get a list of registered hashing algorithms.
@@ -165,7 +175,7 @@ class password {
             <footer id="footer" >
                 <div class="container ">
 		  <div class="col-sm-6 col-sm-offset-3">
-<br/><br/>
+<br/>
 		    <p>This is free software, and is released under the terms of the <abbr title="GNU General Public License">GPL</abbr> version 3 or (at your option) any later version. See <a href="license.txt">license.txt</a>.</p>
 		    <p>Available on Github<a href="https://github.com/BatchHeader/Password-Generator" role="btn" class="btn" target="_blank">Fork</a> <a href="https://github.com/BatchHeader/Password-Generator/archive/master.zip" role="btn" class="btn" target="_blank">Download</a></p>
                     <p>Site <?php echo date("Y"); ?> - <a href="https://www.batchheader.co.uk"> BatchHeader Ltd</a></p>
