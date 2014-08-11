@@ -111,6 +111,18 @@ class password {
                         <form class="form-horizontal" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                             <fieldset>
                                 <legend>Choose filters :</legend>
+                                <div class="form-group">
+                                    <label class="col-xs-4" for="idLength">Password Length</label>
+					<div class="col-xs-4">
+					<select autofocus class="form-control" id="idLength" name="length" value="15">
+					  <option>10</option>
+					  <option selected>15</option>
+					  <option>20</option>
+					  <option>25</option>
+					  <option>30</option>
+					</select>
+					</div>
+                                </div>
 				<div class="form-group">
                                 	<label class="checkbox col-xs-4">Lowercase</label>
                                 	    <input type="checkbox" id="idLowercase" name="lowercase" checked />
@@ -128,13 +140,10 @@ class password {
         	                            <input type="checkbox" id="idSpecialchars" name="specialchars" />
         	                </div>
                                 <div class="form-group">
-                                    <label class="col-xs-4" for="idLength">Number of characters</label>
-                                        <input type="text" id="idLength" name="length" value="15" />
-                                </div>
-                                <div class="form-group">
                                     <label class="checkbox col-xs-4" for="idHash">Hash</label>
                                     <input type="checkbox" id="idSpecialchars" name="hash_check" />
-                                    <select id="idHash" name="hash">
+					<div class="col-xs-4">
+                                    <select class="form-control" id="idHash" name="hash">
                                         <?php
                                         // Get a list of registered hashing algorithms.
                                         $hashes = hash_algos();
@@ -143,6 +152,7 @@ class password {
                                             <option value="<?php print $hash; ?>"><?php print $hash; ?></option>
                                         <?php endforeach; ?>
                                     </select>
+					</div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg" name="passgen">Submit</button>
                             </fieldset>
